@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #square {
+        background-color: #123456;
+        transition: height 375ms, width 375ms;
+        height: 30px;
+        width: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="button">Make bigger</button>
+    <div id="square"></div>
+    <script></script>
+    <script>
+      const button = document.getElementById("button");
+      const square = document.getElementById("square");
+
+      button.addEventListener("click", () => {
+        const size = window.getComputedStyle(square).height.replace(/[^\d]/g, "");
+        const newSize = `${Number(size) * 2}px`;
+
+        square.style.width = newSize;
+        square.style.height = newSize;
+      });
+    </script>
+  </body>
+</html>
